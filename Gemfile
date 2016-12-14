@@ -51,6 +51,8 @@ gem 'bootstrap', '~> 4.0.0.alpha5'
 gem 'simple_form'
 gem "font-awesome-rails"
 gem 'devise'
+gem 'geocoder'
+gem "figaro"
 
 ## Gemfile for Rails 3+, Sinatra, or Merb
 gem 'will_paginate', '~> 3.1.1'
