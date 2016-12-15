@@ -7,15 +7,12 @@
 <% if @place.latitude.present? && @place.longitude.present? %>
 
     <script>
-
       function initMap() {
         var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
-
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 12,
           center: myLatLng
         });
-
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: map,
@@ -27,7 +24,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBML4Yff5wbpG-Za6oEtqLdaFszm_OATXQ&callback=initMap">
     </script>
 
-    <div id="map"></div>
+  <div id="map"></div>
   <% end %>
 
   <br />
@@ -50,15 +47,18 @@
         </button>
         <h4 class="modal-title" id="myModalLabel">Add a comment</h4>
       </div>
+
       <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
       <div class="modal-body">
           <%= f.input :message %>
           <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
       </div>
+
       <% end %>
     </div>
   </div>
