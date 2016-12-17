@@ -53,6 +53,7 @@ gem "font-awesome-rails"
 gem 'devise'
 gem 'geocoder'
 gem "figaro"
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 
 ## Gemfile for Rails 3+, Sinatra, or Merb
 gem 'will_paginate', '~> 3.1.1'
