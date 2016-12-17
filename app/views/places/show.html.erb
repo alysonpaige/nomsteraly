@@ -99,11 +99,10 @@
       </div>
 
       <div class="modal-body">
-          <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-            <%= f.input :photo %>
-            <%= f.input :caption %>
+      <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+        <%= f.input :caption %>
       </div>
-
+      
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
@@ -114,21 +113,17 @@
   </div>
 </div>
 
-<!-- remove div and h1 for button? -->
 <div class="col-xs-10 offset-xs-1">
 <h1 class="pull-left">Photos</h1>
 <!-- Button trigger modal for photo -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="myModalPhoto">Add a photo
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalPhoto">Add a photo
 </button>
 </div>
 
 <div class="clear"></div>
 
-<div class="booyah-box col-xs-12">
-<h1>Photos</h1>
 <% @place.photos.each do |photo| %>
   <% f.input :photo %>
   <%= image_tag photo.picture %>
   <%= photo.caption %>
 <% end %>
-</div>
