@@ -32,7 +32,7 @@
 <div class="pull-right">
 <% if current_user && current_user == @place.user %>
 <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
-<%= link_to 'Delete', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
+<%= link_to 'Delete', place_path(@place), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
 <% end %>
 </div>
 
@@ -47,7 +47,7 @@
 
 </div>
 
-<!-- Modal -->
+<!-- Comment Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -78,7 +78,7 @@
 <h1 class="pull-left">Comments</h1>
 <br />
 <% @place.comments.each do |comment| %>
-  <div class="col-xs-12 offset-md-6">
+  <div>
     <blockquote>
       <% if comment.humanized_rating.present? %>
         <b><%= comment.humanized_rating %></b> - 
@@ -91,19 +91,19 @@
 </div>
 
 <div class="clear"></div>
-<div class="booyah-box col-xs-10 offset-xs-1">
-<h1 class="pull-left">Photos</h1>
+  <div class="booyah-box col-xs-10 offset-xs-1">
+    <h1 class="pull-left">Photos</h1>
 <br />
 <br />
-<div class="col-xs-12 offset-sm-6">
 <% @place.photos.each do |photo| %>
-  <%= image_tag photo.picture %> - 
-  <%= photo.caption %>
-<% end %>
+  <div>
+      <%= image_tag photo.picture %>
+      <br /> 
+      <br />
+      <%= photo.caption %>
+    </div>
+  <% end %>
 </div>
-</div>
-
-<!-- Button trigger modal -->
 
 <div class="clear"></div>
 
