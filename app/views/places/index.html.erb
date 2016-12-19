@@ -38,10 +38,10 @@
       <small><%= place.user.email %></small>
     <% end %>
 
-<hr />
-
 <% if place.comments.present? %>
-  <div class="col-xs-10 offset-xs-1">
+<hr />
+<p class="text-center"><i><b>Latest comment:</b></i></p>
+  <div class="col-xs-12 col-sm-6">
     <blockquote>
       <% if place.comments.last.humanized_rating.present? %>
         <b><%= place.comments.last.humanized_rating %></b> -
@@ -52,8 +52,11 @@
   </div>
 <% end %>
 
-<div class="col-xs-10 offset-xs-1">
+<div class="clear"></div>
+
 <% if place.photos.present? %>
+<p class="text-center"><i><b>Recent photos:</b></i></p>
+<div class="col-xs-12">
   <%= image_tag place.photos.first.picture %>
 <% end %>
 </div>

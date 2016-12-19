@@ -74,16 +74,19 @@
   </div>
 </div>
 
+<div class="clear"></div>
+
 <div class="booyah-box col-xs-10 offset-xs-1">
-<h1 class="pull-left">Comments</h1>
+<h1 class="text-center">Comments</h1>
 <br />
 <% @place.comments.each do |comment| %>
   <div>
-    <blockquote>
+    <blockquote class="pull-left">
       <% if comment.humanized_rating.present? %>
-        <b><%= comment.humanized_rating %></b> - 
+        <b><%= comment.humanized_rating %></b>
       <% end %>
         <%= comment.message %>
+        <br />
       <small><%= comment.user.email %></small>
     </blockquote>
   </div>
@@ -91,16 +94,19 @@
 </div>
 
 <div class="clear"></div>
+
   <div class="booyah-box col-xs-10 offset-xs-1">
-    <h1 class="pull-left">Photos</h1>
-<br />
+    <h1 class="text-center">Photos</h1>
 <br />
 <% @place.photos.each do |photo| %>
-  <div>
+  <div class="pull-left">
       <%= image_tag photo.picture %>
       <br /> 
-      <br />
-      <%= photo.caption %>
+      <blockquote class="pull-down">
+        <small>
+          <%= photo.caption %>
+        </small>
+      </blockquote>
     </div>
   <% end %>
 </div>
