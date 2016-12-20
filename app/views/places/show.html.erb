@@ -100,7 +100,7 @@
 <br />
 <% @place.photos.each do |photo| %>
   <div class="pull-left">
-      <%= image_tag photo.picture %>
+      <%= image_tag photo.picture, class: "photo-width" %>
       <br /> 
       <blockquote class="pull-down">
         <small>
