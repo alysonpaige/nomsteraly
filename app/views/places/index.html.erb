@@ -57,7 +57,7 @@
 <% if place.photos.present? %>
 <p class="text-center"><i><b>Recent photos:</b></i></p>
 <div class="col-xs-12">
-  <%= image_tag place.photos.first.picture %>
+  <%= image_tag place.photos.first.picture, class: "photo-width" %>
 <% end %>
 </div>
 
